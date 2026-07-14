@@ -1,0 +1,62 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+
+\usepackage[table]{xcolor} 
+\usepackage{booktabs}      
+\usepackage{tabularx} 
+\usepackage{enumitem} 
+
+\geometry{a4paper, margin=1.5cm} 
+
+\definecolor{headerblue}{RGB}{31, 78, 121}
+\definecolor{rowgray}{RGB}{245, 245, 245}
+
+\begin{document}
+
+\section*{Project Classification}
+
+\vspace{1em}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.6} 
+\rowcolors{2}{white}{rowgray}     
+
+\begin{tabularx}{\textwidth}{l c c c X c} 
+\toprule
+\rowcolor{headerblue} 
+\textcolor{white}{\textbf{CLASSE}} & 
+\textcolor{white}{\textbf{DURATA}} & 
+\textcolor{white}{\textbf{RISCHIO}} & 
+\textcolor{white}{\textbf{COMPLESSITÀ}} & 
+\textcolor{white}{\textbf{TECNOLOGIA}} & 
+\textcolor{white}{\textbf{PROBABILITÀ}} \\
+\midrule
+
+\textbf{Type A} & >24 months   & ALTA        & ALTA        & Breakthrough / Experimental & CERTAMENTE \\
+\textbf{Type B} & 12-24 months & MEDIO       & MEDIO       & Current / Leading Edge      & MOLTO PROBABILE \\
+\textbf{Type C} & 6-12 months  & BASSO       & BASSO       & Best of Breed / Proven      & PROBABILE \\
+\textbf{Type D} & 3-6 months   & MOLTO BASSO & MOLTO BASSO & Standard / Off-the-Shelf    & POCO PROBABILE \\
+\textbf{Type E} & <3 months    & MINIMO      & MINIMO      & Practical / Legacy          & NULLO \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\vspace{2em} 
+
+\subsection*{Glossario delle Tecnologie}
+\begin{itemize}[label=\textbullet, itemsep=0.5em]
+    \item \textbf{Breakthrough / Experimental:} Tecnologie all'avanguardia o in fase di test sperimentale. Offrono enormi vantaggi competitivi ma comportano un rischio di stabilità altissimo.
+    \item \textbf{Current / Leading Edge:} Tecnologie moderne e ampiamente adottate dal mercato attuale. Rappresentano il compromesso ideale tra innovazione e affidabilità strutturale.
+    \item \textbf{Best of Breed / Proven:} I leader storici e super-collaudati per una specifica funzione. Soluzioni mature, stabili e con ampio supporto garantito.
+    \item \textbf{Standard / Off-the-Shelf:} Prodotti software commerciali o open-source "pronti all'uso" e pacchettizzati. Richiedono configurazione anziché sviluppo da zero.
+    \item \textbf{Practical / Legacy:} Tecnologie basilari o sistemi consolidati da anni. Livello di innovazione assente, ma comportamento prevedibile al 100\% e rischio nullo.
+\end{itemize}
+
+\end{document}
