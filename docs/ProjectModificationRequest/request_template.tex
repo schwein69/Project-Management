@@ -1,0 +1,55 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\geometry{a4paper, margin=2cm}
+
+\definecolor{headerblue}{RGB}{31, 78, 121}
+\definecolor{rowgray}{RGB}{245, 245, 245}
+
+\begin{document}
+
+\noindent \textbf{Data della richiesta}: \rule{1cm}{0.15mm} / \rule{1cm}{0.15mm} / \rule{1cm}{0.15mm}
+
+\vspace{1.5em}
+\begin{center}
+    \Large \textbf{Modulo di Richiesta Modifica}
+\end{center}
+\vspace{0.5em}
+
+\noindent \textit{Il presente documento formalizza e traccia le richieste di variazione ai requisiti concordati, emerse successivamente all'inizio dei lavori.}
+
+\vspace{1.5em}
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\rowcolors{2}{white}{rowgray}
+\begin{tabularx}{\textwidth}{>{\bfseries}l X}
+\toprule
+\rowcolor{headerblue} 
+\textcolor{white}{Riferimento} & \textcolor{white}{Dettagli} \\
+\midrule
+Progetto & Shipping-on-the-Air \\
+Oggetto della Richiesta & "Descrizione della Modifica" \\
+Descrizione Operativa & "Dettagli sulla modifica richiesta" \\
+Richiedente & "Nome e Cognome del responsabile dell'azienda richiedente" \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\vspace{1.5em}
+
+\noindent \small \textit{Con la firma del presente documento, il Cliente conferma la validità della richiesta sopra descritta. Il team di sviluppo prenderà in carico la richiesta per valutarne l'eventuale impatto su tempi e costi del progetto.}
+
+\vspace{2.5em}
+
+\noindent \textbf{Firma del Cliente}: \rule{6cm}{0.15mm} \hfill \textbf{Data}: \rule{1cm}{0.15mm} / \rule{1cm}{0.15mm} / \rule{1cm}{0.15mm}
+
+\end{document}
