@@ -83,10 +83,70 @@ il modulo ufficiale che facciamo firmare al cliente quando ci chiede di aggiunge
 % TODO: Aggiungere l'elenco dei documenti specifici (WBS, Piano dei Rischi, ecc.) una volta completati.
 
 \section{Introduzione}
-\subsection{Azienda esecutrice}
+In questa sezione si delineano le informazioni fondamentali relative all'esecutore, \textbf{TechSolution}, e al committente del progetto \textit{Shipping-on-the-Air}. L'obiettivo è fornire una panoramica chiara del contesto aziendale, analizzando le dinamiche tra le parti e giustificando le scelte metodologiche adottate. Vengono inoltre presentate le competenze del team di sviluppo e le politiche interne che regolano il flusso di lavoro.
+
+\subsection{Azienda esecutrice: TechSolution}
+L'esecutore del progetto è \textbf{TechSolution}, un'azienda informatica specializzata nella progettazione e sviluppo di soluzioni software innovative. Pur essendo una realtà giovane, composta attualmente da tre figure professionali neo-laureate, si distingue per l'adozione di tecnologie all'avanguardia. Sebbene non disponga ancora di un know-how consolidato in specifici settori di mercato, la forte propensione all'innovazione ha permesso a TechSolution di ottenere visibilità mediatica tramite l'incubatore in cui opera. Questo posizionamento, unito a un'offerta economica competitiva, è stato il fattore determinante nella scelta da parte del committente. L'azienda è attualmente in fase di espansione e prevede l'inserimento a breve termine di nuove figure tecniche specializzate.
+
 \subsubsection{Startup Team}
-\subsubsection{Politiche aziendali}
-% TODO: Orari, modalità di lavoro (es. Agile/Iterativo), riunioni, comunicazioni.
+Il nucleo operativo di TechSolution è formato da tre membri, i quali ricoprono congiuntamente ruoli di Project Management e sviluppo. Le competenze individuali sono mappate nel documento \href{https://raw.githubusercontent.com/schwein69/Project-Management/master/docs/TeamSkills/team_skills.pdf}{\textit{Startup Team Skills}}, che valuta sia le \textit{pre-skills} (competenze relazionali, di comunicazione e di leadership) sia le \textit{pro-skills} (competenze tecniche e ingegneristiche). Questa duplice valutazione è ritenuta essenziale per un'assegnazione efficace dei task, specialmente all'interno di un team ristretto dove la flessibilità è fondamentale.
+
+La valutazione delle competenze avviene tramite una scala numerica da 1 a 5, ottenuta mediando i risultati di autovalutazioni con le valutazioni incrociate tra colleghi. Per i futuri inserimenti, TechSolution prevede di affinare questo sistema mediante test pratici e aggiornamenti continui basati sulle performance sul campo.
+
+\subsubsection{Politiche aziendali e Metodologia Scrumban}
+Per mantenere il team agile e pronto agli imprevisti, in TechSolution abbiamo adottato un modello operativo \textbf{Scrumban}. All'atto pratico, questo significa che sfruttiamo una lavagna visiva (stile Kanban) per gestire il flusso di lavoro e limitare le attività simultanee, mantenendo però i ritmi, le iterazioni e i brevi incontri di allineamento tipici di Scrum. Questa metodologia ci garantisce un controllo rigoroso sulle scadenze, senza farci perdere la flessibilità necessaria per integrare i cambiamenti richiesti dal progetto. Tutte le politiche aziendali descritte in questa sezione sono state strutturate proprio per supportare questo approccio, ponendo una forte enfasi sul miglioramento continuo (\textit{Kaizen}) attraverso l'analisi critica a fine lavoro.
+
+\subsubsection{Orari lavorativi e Flessibilità}
+L'azienda segue un orario lavorativo in presenza dal lunedì al venerdì, dalle 09:00 alle 19:00, con una pausa pranzo prevista tra le 12:00 e le 13:30. A supporto dell'agilità intrinseca al team e per favorire il benessere lavorativo, è consentito lo svolgimento del lavoro in modalità da remoto (smart working) per una giornata alla settimana, mantenendo comunque un'elevata flessibilità per adattarsi alle esigenze operative e alle necessità del committente.
+
+\subsubsection{Modalità di lavoro e Mob Programming}
+Nel rispetto della policy aziendale settimanale di smart working, le attività procedono in modo integrato sia in sede che a distanza, garantendo in ogni caso la presenza per gli incontri chiave con gli stakeholder. Per affrontare sfide tecniche complesse e favorire il trasferimento di conoscenze, TechSolution incentiva, se necessario, il \textit{Mob Programming}, applicato sia durante la fase di sviluppo codice sia nella redazione della documentazione. Questa pratica stimola il brainstorming e migliora la qualità complessiva dell'output.
+
+\subsubsection{Continuous Feedback e Knowledge Sharing}
+Per mantenere alto il coinvolgimento e garantire la qualità del lavoro, TechSolution promuove attivamente una cultura basata sul \textit{Continuous Feedback}. In pratica, l'azienda valorizza e incentiva il tempo che i membri del team dedicano alla \textit{peer-review} incrociata (sia per lo sviluppo del codice che per la stesura della documentazione). Questo scambio strutturato di feedback costruttivi favorisce la collaborazione, accelera la crescita tecnica individuale e assicura che le \textit{best practices} vengano condivise e assimilate naturalmente da tutto il gruppo.
+
+\subsubsection{Documentazione Continua}
+In linea con l'approccio Agile, la documentazione non è relegata alla fine del progetto, ma è un processo continuo e iterativo. TechSolution predilige l'auto-generazione della documentazione tecnica, archiviando il tutto in un repository condiviso.
+
+\subsubsection{Gestione dei Meeting}
+TechSolution adotta un approccio metodologico rigoroso per la gestione degli incontri aziendali, avvalendosi di template standardizzati. Al fine di garantire la tracciabilità documentale a fini storici, ogni riunione richiede la redazione di un verbale contenente data, partecipanti e temi trattati. L'effettuazione di un incontro è subordinata alla preventiva condivisione di un'agenda e si conclude con la formalizzazione delle decisioni assunte.
+
+\paragraph{Project Kick-Off Meeting}
+Costituisce l'evento formale che sancisce il passaggio del progetto alla fase esecutiva. TechSolution prevede un'unica sessione strutturata per allineare tutte le parti coinvolte, garantendo la massima efficacia operativa. Al fine di condurre un incontro produttivo, l'agenda istituzionale si articola sulle seguenti aree fondamentali:
+\begin{itemize}
+    \item \textbf{Introduzioni:} Presentazione formale per offrire ai membri del team e agli stakeholder l'opportunità di conoscersi e di comprendere chiaramente i rispettivi ruoli all'interno del progetto.
+    \item \textbf{Panoramica e Obiettivi:} Definizione chiara del "perché" e del "cosa" del progetto. In questa fase si delineano il perimetro d'azione (\textit{scope}), i \textit{deliverable} previsti e i risultati attesi, anche attraverso l'analisi condivisa del \textit{Project Definition Statement} (PDS).
+    \item \textbf{Tempistiche e Milestone :} Revisione rigorosa della schedulazione, delle scadenze critiche e delle fasi in cui si articolerà il ciclo di vita del progetto.
+    \item \textbf{Ruoli e Responsabilità :} Assegnazione formale degli incarichi per stabilire con esattezza chi eseguirà determinate attività e come i diversi membri del team (composto da tre risorse) collaboreranno tra loro.
+    \item \textbf{Comunicazione e Strumenti:} Fissazione dei protocolli comunicativi aziendali, delle modalità di reportistica (es. \textit{Daily Meeting}) e degli strumenti di \textit{Project Management} adottati (come Trello, GitHub, Microsoft Teams, Google meets, etc...).
+    \item \textbf{Rischi e Vincoli :} Identificazione dei potenziali colli di bottiglia (es. limiti tecnologici, normativi o di \textit{budget}) e pianificazione preventiva delle relative strategie di mitigazione.
+    \item \textbf{Sessione Q\&A :} Apertura di uno spazio finale dedicato a domande e chiarimenti, volto a dissipare qualsiasi dubbio e garantire un'assoluta chiarezza prima dell'avvio effettivo dei lavori.
+\end{itemize}
+
+\paragraph{Project Scoping Meeting}
+Incontri finalizzati alla concertazione con il committente e alla definizione del perimetro di progetto. Tali sessioni sono preposte alla produzione di deliverable analitici quali: \textit{Conditions of Satisfaction} (CoS), \textit{Requirements Breakdown Structure} (RBS) e \textit{Project Overview Statement} (POS). 
+Qualora si rendano necessarie sessioni multiple, queste vengono distanziate di una settimana per consentire l'elaborazione dei dati, concludendosi con una \textit{review} critica sull'efficacia dell'incontro.
+
+\paragraph{Daily Meeting}
+Incontri di allineamento a cadenza quotidiana (fissati alle ore 09:30, con un limite temporale stringente di 30 minuti), concepiti per superare l'inefficienza dei tradizionali resoconti serali. 
+Si discute brevemente lo stato di avanzamento dei task, le criticità emerse e le eventuali necessità di supporto. L'agenda è strutturata in tre punti chiave:
+\begin{itemize}
+    \item \textbf{Cosa ho fatto ieri:} Breve resoconto delle attività completate, con eventuale menzione di ostacoli superati.
+    \item \textbf{Cosa farò oggi:} Presentazione dei task pianificati per la giornata, con indicazione delle priorità e delle risorse necessarie.
+    \item \textbf{Blocchi o criticità:} Segnalazione immediata di problemi che potrebbero compromettere il rispetto della schedula, con eventuale richiesta di supporto o intervento da parte del team. Questi vengono registrati in un report da parte per tenere traccia delle criticità e delle azioni intraprese per risolverle.
+\end{itemize}
+
+\paragraph{Problem Resolution Meeting}
+Incontri convocati \textit{on-demand} a seguito di criticità inibenti emerse durante i \textit{Daily Meeting}. L'agenda è focalizzata sulla circoscrizione del problema, l'assegnazione di un responsabile (\textit{owner}) e la definizione dei criteri per la risoluzione. Sebbene secondo le best practices di settore suggerisca il coinvolgimento esclusivo dei diretti interessati, l'attuale composizione a tre membri favorisce la partecipazione dell'intero gruppo per massimizzare l'efficacia del \textit{brainstorming}.
+
+\paragraph{Project Review Meeting}
+Organizzati in concomitanza con il rilascio di specifiche \textit{milestone}, questi incontri sono dedicati all'ispezione dei risultati e all'adattamento del piano di lavoro. La valutazione delle metriche di avanzamento e l'ideazione di azioni correttive richiedono la presenza obbligatoria del committente (o di un suo delegato formale), congiuntamente al team di progetto e agli stakeholder rilevanti.
+
+\subsubsection{Gestione delle Comunicazioni}
+La politica di comunicazione aziendale stabilisce che ogni approvazione legata ai requisiti di progetto o all'accettazione dei \textit{deliverable} debba essere sempre formalizzata per iscritto e archiviata in formato digitale, al fine di assicurarne la completa tracciabilità storica.
+I Project Manager fungono da interfaccia primaria con il committente. Al termine di ogni confronto, il team redige un documento di sintesi (come, ad esempio, una \textit{Change Request}), sul quale il cliente è tenuto a esprimere un'esplicita approvazione o rifiuto. Questo meccanismo è stato introdotto per evitare i rischi operativi e contrattuali derivanti dall'accettazione tacita (il cosiddetto "silenzio-assenso").
+Per quanto riguarda le comunicazioni interne, si producono documenti formali solo per arricchire la \textit{knowledge base} aziendale o per mantenere lo storico del progetto. I problemi e gli ostacoli quotidiani (\textit{impediments}) vengono invece discussi e risolti a voce durante i \textit{Daily Meeting}. 
+Infine, per aumentare l'efficienza, i report scritti vengono redatti \textbf{esclusivamente} per i \textit{task} in ritardo o critici. Le attività che procedono regolarmente secondo i piani non richiedono alcuna inutile reportistica aggiuntiva.
 
 \subsection{Committente (Cliente B2B)}
 % TODO: Descrivere l'azienda cliente che necessita di superare i limiti della logistica su gomma.
