@@ -1,0 +1,118 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+\usepackage{array}
+\usepackage{longtable} % Necessario per le tabelle multipagina
+
+\begin{document}
+
+\subsection*{Project Scoping Meeting Agenda}
+
+\noindent
+\textbf{Dipendente}: \\
+\textbf{Data}: 1 maggio \\
+\textbf{Orario}: 10:00 \\
+\textbf{Luogo}: Meeting virtuale (Microsoft Teams)
+
+\subsubsection*{Oggetto}
+Primo incontro conoscitivo e di scoping con NexusLog S.p.A. per il progetto ``Shipping-on-the-Air''.
+
+\subsubsection*{Partecipanti}
+% [Sezione lasciata intenzionalmente vuota]
+\vspace{1.5cm}
+
+\subsubsection*{Svolgimento}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.20\textwidth}|c|c|>{\raggedright\arraybackslash}p{0.42\textwidth}|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Prima del meeting}} & \multicolumn{1}{c|}{\textbf{Durante il meeting}} \\
+\hline
+\textbf{Argomento in agenda} & \textbf{Orario} & \textbf{Direttore} & \textbf{Note} \\
+\hline
+\endfirsthead
+
+\hline
+\multicolumn{3}{|c|}{\textbf{Prima del meeting (Continua)}} & \multicolumn{1}{c|}{\textbf{Durante il meeting}} \\
+\hline
+\textbf{Argomento in agenda} & \textbf{Orario} & \textbf{Direttore} & \textbf{Note} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+Introduzione & 10:00 - 10:15 & & NexusLog è un operatore di primissimo piano a livello nazionale. Ci comunicano sin da subito il loro interesse verso l'approccio agile (Scrumban) della nostra startup, ritenuto ideale per gestire l'elevata incertezza tecnologica del progetto. \\
+\hline
+Scopo del meeting & 10:15 - 10:20 & & Definire il perimetro del progetto ``Shipping-on-the-Air'', chiarire le ambiguità iniziali e valutare la fattibilità tecnica della soluzione software per la gestione dei droni. \\
+\hline
+Descrizione dello stato corrente e del problema & 10:20 - 11:00 & & NexusLog vanta una rete capillare (5 poli intermodali, 1.200 automezzi, oltre 50.000 spedizioni B2C al giorno), ma l'attuale modello basato esclusivamente sul trasporto su gomma è saturo. Il traffico urbano causa inefficienze sistematiche, ritardi imprevedibili ed elevati costi operativi per l'ultimo miglio. \vspace{0.5em} \newline Inoltre, l'azienda fatica a competere nel nascente settore delle consegne ultra-rapide per merci leggere e non ha un'infrastruttura adeguata per aggredire il mercato del \textit{food delivery}, un segmento in cui vorrebbe entrare con soluzioni proprietarie. \\
+\hline
+Descrizione dello stato finale & 11:00 - 11:45 & & Il committente vuole rivoluzionare l'ultimo miglio implementando una flotta di droni nello spazio aereo cittadino, garantendo consegne entro 30 minuti. \vspace{0.5em} \newline Viene sottolineato un punto cruciale: nonostante la forte spinta innovativa, NexusLog vuole proteggere la propria \textit{brand reputation} consolidata. Per questo motivo, l'azienda manterrà rigorosamente \textit{in-house} la gestione operativa e commerciale del servizio, affidando in \textit{outsourcing} esclusivamente lo sviluppo dell'architettura software e tecnologica. \\
+\hline
+Discussione dei requisiti & 11:45 - 12:30 & & I macro requisiti architetturali individuati per l'orchestrazione del sistema sono:
+\begin{itemize}
+    \item \textbf{Gestione Ordini (\textit{Delivery \& Order}):} Ricezione e orchestrazione del ciclo di vita.
+    \item \textbf{Logistica e Flotta:} Verifica vincoli pre-volo (batteria, \textit{payload}).
+    \item \textbf{Navigazione (\textit{Routing \& GPS}):} Calcolo rotte e aggiramento \textit{no-fly zone}.
+    \item \textbf{Tracciamento Live:} Telemetria satellitare in tempo reale.
+    \item \textbf{Notifiche \& Pagamenti:} Sistema \textit{event-driven} e gateway integrato.
+\end{itemize}
+I requisiti sono definiti ad alto livello. Saranno necessari meeting dedicati per ogni sottosistema. \\
+\hline
+Budget e tempi & 12:30 - 13:00 & & Per mitigare l'esposizione finanziaria, il committente ha stanziato un budget limitato. Il progetto partirà come un \textit{Proof of Concept} (PoC) / \textit{Minimum Viable Product} (MVP). \vspace{0.5em} \newline NexusLog necessita di una prima versione funzionante entro pochi mesi per iniziare i test di volo sul campo nelle aree pilota. \\
+\hline
+Domande varie & 13:00 - 13:30 & & 
+\begin{itemize}
+    \item Il \textit{procurement} hardware (droni, stazioni) sarà interamente gestito da NexusLog.
+    \item Verranno fornite a breve le API proprietarie per interfacciarsi con la telemetria di bordo.
+    \item Sarà necessaria un'integrazione software con i database attuali di NexusLog.
+\end{itemize} \\
+\hline
+Documentazione & 13:30 - 14:00 & & Non essendo chiari i dettagli algoritmici, non è possibile stendere la documentazione definitiva. Le specifiche di dettaglio verranno prodotte nei successivi incontri. \\
+\end{longtable}
+
+\subsubsection*{Conditions of Satisfaction (CoS)}
+\begin{itemize}
+    \item Sviluppo di un \textit{Proof of Concept} (PoC) funzionante per testare l'efficacia del servizio ``Shipping-on-the-Air'' prima di investimenti su larga scala.
+    \item Rispetto rigoroso del budget limitato, concentrando le risorse esclusivamente sullo sviluppo software (\textit{outsourcing} tecnologico).
+    \item Garanzia di abbattimento dei tempi di consegna per l'ultimo miglio (SLA: consegne B2C e \textit{food delivery} garantite entro 30 minuti).
+    \item Preservazione della \textit{brand reputation} di NexusLog mediante un software affidabile, in modo da non impattare negativamente il \textit{core business} logistico tradizionale.
+    \item Il sistema dovrà integrare con successo i 6 moduli cardine: gestione ordini, controllo flotta e \textit{payload}, \textit{routing} satellitare, tracciamento live, notifiche e pagamenti.
+\end{itemize}
+
+\subsubsection*{Valutazione del Meeting}
+\begin{itemize}
+    \item[\textbf{[SÌ]}] L'agenda è stata rispettata?
+    \item[\textbf{[SÌ]}] Tutti i partecipanti hanno interagito?
+    \item[\textbf{[SÌ]}] L'obiettivo del meeting è stato raggiunto? (Sono state definite le macro-aree del PoC).
+    \item[\textbf{[SÌ]}] Abbiamo chiarito i prossimi step?
+    \item[\textbf{[SÌ]}] Questo meeting è stato utile?
+    \item[\textbf{[Note]}] Come potrebbe migliorare il prossimo meeting? \textit{Si eviteranno discussioni generali sul business per concentrarsi esclusivamente sulle specifiche tecniche delle API dei droni e sulla gestione del payload.}
+\end{itemize}
+
+\subsubsection*{Pianificazione del prossimo meeting}
+\begin{itemize}
+    \item \textbf{Obiettivo:} Analisi del primo sottosistema (Gestione Ordini e Controllo Vincoli di Flotta/Payload) e revisione delle API fornite dal produttore dei droni.
+    \item \textbf{Data:} 05/05/2026
+    \item \textbf{Luogo:} Meeting Virtuale (Microsoft Teams)
+    \item \textbf{Partecipanti:} % [Sezione lasciata intenzionalmente vuota]
+\end{itemize}
+
+\vspace{1.5cm}
+\noindent
+\textbf{Firma}: \hrulefill \\ \\
+\textbf{Data}: 01/05/2026
+
+\end{document}
