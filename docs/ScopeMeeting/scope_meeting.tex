@@ -32,18 +32,14 @@ Primo incontro conoscitivo e di scoping con NexusLog S.p.A. per il progetto ``Sh
 
 \subsubsection*{Svolgimento}
 \renewcommand{\arraystretch}{1.5}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{0.20\textwidth}|c|c|>{\raggedright\arraybackslash}p{0.42\textwidth}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.25\textwidth}|c|>{\raggedright\arraybackslash}p{0.55\textwidth}|}
 \hline
-\multicolumn{3}{|c|}{\textbf{Prima del meeting}} & \multicolumn{1}{c|}{\textbf{Durante il meeting}} \\
-\hline
-\textbf{Argomento in agenda} & \textbf{Orario} & \textbf{Direttore} & \textbf{Note} \\
+\textbf{Argomento in agenda} & \textbf{Orario} & \textbf{Note} \\
 \hline
 \endfirsthead
 
 \hline
-\multicolumn{3}{|c|}{\textbf{Prima del meeting (Continua)}} & \multicolumn{1}{c|}{\textbf{Durante il meeting}} \\
-\hline
-\textbf{Argomento in agenda} & \textbf{Orario} & \textbf{Direttore} & \textbf{Note} \\
+\textbf{Argomento in agenda} & \textbf{Orario}  & \textbf{Note} \\
 \hline
 \endhead
 
@@ -53,34 +49,36 @@ Primo incontro conoscitivo e di scoping con NexusLog S.p.A. per il progetto ``Sh
 \hline
 \endlastfoot
 
-Introduzione & 10:00 - 10:15 & & NexusLog è un operatore di primissimo piano a livello nazionale. Ci comunicano sin da subito il loro interesse verso l'approccio agile (Scrumban) della nostra startup, ritenuto ideale per gestire l'elevata incertezza tecnologica del progetto. \\
+Introduzione & 10:00 - 10:30 & NexusLog è un operatore di primissimo piano a livello nazionale. Ci comunicano sin da subito il loro interesse verso l'approccio agile (Scrumban) della nostra startup, ritenuto ideale per gestire l'elevata incertezza tecnologica del progetto. \\
 \hline
-Scopo del meeting & 10:15 - 10:20 & & Definire il perimetro del progetto ``Shipping-on-the-Air'', chiarire le ambiguità iniziali e valutare la fattibilità tecnica della soluzione software per la gestione dei droni. \\
+Scopo del meeting & 10:30 - 10:45 & Definire il perimetro del progetto ``Shipping-on-the-Air'', chiarire le ambiguità iniziali e valutare la fattibilità tecnica della soluzione software per la gestione dei droni. \\
 \hline
-Descrizione dello stato corrente e del problema & 10:20 - 11:00 & & NexusLog vanta una rete capillare (5 poli intermodali, 1.200 automezzi, oltre 50.000 spedizioni B2C al giorno), ma l'attuale modello basato esclusivamente sul trasporto su gomma è saturo. Il traffico urbano causa inefficienze sistematiche, ritardi imprevedibili ed elevati costi operativi per l'ultimo miglio. \vspace{0.5em} \newline Inoltre, l'azienda fatica a competere nel nascente settore delle consegne ultra-rapide per merci leggere e non ha un'infrastruttura adeguata per aggredire il mercato del \textit{food delivery}, un segmento in cui vorrebbe entrare con soluzioni proprietarie. \\
+Descrizione dello stato corrente e del problema & 10:45 - 11:30 & L'attuale modello logistico di NexusLog, basato esclusivamente sul trasporto terrestre, risulta ormai saturo. Il traffico urbano causa inefficienze sistematiche e ritardi imprevedibili, rendendo i costi operativi per l'ultimo miglio sproporzionati, soprattutto per la movimentazione di piccoli pacchi. \vspace{0.5em} \newline La necessità primaria dell'azienda è quindi quella di ampliare l'offerta dei propri servizi e, parallelamente, abbattere in modo drastico i costi operativi legati alle consegne di pacchi leggeri. Raggiungere questo duplice obiettivo permetterebbe a NexusLog di diventare altamente competitiva nel settore delle spedizioni ultra-rapide e di aggredire il mercato del \textit{food delivery} con soluzioni proprietarie. \\
 \hline
-Descrizione dello stato finale & 11:00 - 11:45 & & Il committente vuole rivoluzionare l'ultimo miglio implementando una flotta di droni nello spazio aereo cittadino, garantendo consegne entro 30 minuti. \vspace{0.5em} \newline Viene sottolineato un punto cruciale: nonostante la forte spinta innovativa, NexusLog vuole proteggere la propria \textit{brand reputation} consolidata. Per questo motivo, l'azienda manterrà rigorosamente \textit{in-house} la gestione operativa e commerciale del servizio, affidando in \textit{outsourcing} esclusivamente lo sviluppo dell'architettura software e tecnologica. \\
+Descrizione dello stato finale & 11:30 - 12:15 & Il committente vuole ampliare le consegne introducendo flotte di droni in città, con l'obiettivo di garantire spedizioni in meno di 2 ore per i pacchi e in meno di 1 ora per le consegne a domicilio di take away. \vspace{0.5em} \newline È stato però chiarito un punto fondamentale: pur volendo puntare forte sull'innovazione, NexusLog ci tiene a tutelare la reputazione di affidabilità costruita negli anni. Per questo motivo, l'azienda continuerà a gestire internamente tutta la parte operativa e commerciale, delegando all'esterno esclusivamente lo sviluppo del software e della tecnologia. I droni se li gestiscono in-house. \\
 \hline
-Discussione dei requisiti & 11:45 - 12:30 & & I macro requisiti architetturali individuati per l'orchestrazione del sistema sono:
+Discussione dei requisiti & 12:15 - 13:00 & I macro requisiti architetturali individuati sono:
 \begin{itemize}
-    \item \textbf{Gestione Ordini (\textit{Delivery \& Order}):} Ricezione e orchestrazione del ciclo di vita.
+    \item \textbf{Gestione Ordini:} Ricezione e preparazione degli ordini.
     \item \textbf{Logistica e Flotta:} Verifica vincoli pre-volo (batteria, \textit{payload}).
-    \item \textbf{Navigazione (\textit{Routing \& GPS}):} Calcolo rotte e aggiramento \textit{no-fly zone}.
+    \item \textbf{Navigazione:} Calcolo rotte e algoritmi di volo.
     \item \textbf{Tracciamento Live:} Telemetria satellitare in tempo reale.
     \item \textbf{Notifiche \& Pagamenti:} Sistema \textit{event-driven} e gateway integrato.
 \end{itemize}
 I requisiti sono definiti ad alto livello. Saranno necessari meeting dedicati per ogni sottosistema. \\
 \hline
-Budget e tempi & 12:30 - 13:00 & & Per mitigare l'esposizione finanziaria, il committente ha stanziato un budget limitato. Il progetto partirà come un \textit{Proof of Concept} (PoC) / \textit{Minimum Viable Product} (MVP). \vspace{0.5em} \newline NexusLog necessita di una prima versione funzionante entro pochi mesi per iniziare i test di volo sul campo nelle aree pilota. \\
+\textbf{Pausa Pranzo} & \textbf{13:00 - 14:00} & Pausa pranzo.\\
 \hline
-Domande varie & 13:00 - 13:30 & & 
+Budget e tempi & 14:00 - 14:45 & Per mitigare l'esposizione finanziaria, il committente ha stanziato un budget limitato. Il progetto partirà come un \textit{Proof of Concept} (PoC) / \textit{Minimum Viable Product} (MVP). \vspace{0.5em} \newline NexusLog necessita di una prima versione funzionante entro 4 mesi per iniziare i test di volo sul campo nelle aree pilota. \\
+\hline
+Domande varie & 14:45 - 15:30 & 
 \begin{itemize}
     \item Il \textit{procurement} hardware (droni, stazioni) sarà interamente gestito da NexusLog.
     \item Verranno fornite a breve le API proprietarie per interfacciarsi con la telemetria di bordo.
     \item Sarà necessaria un'integrazione software con i database attuali di NexusLog.
 \end{itemize} \\
 \hline
-Documentazione & 13:30 - 14:00 & & Non essendo chiari i dettagli algoritmici, non è possibile stendere la documentazione definitiva. Le specifiche di dettaglio verranno prodotte nei successivi incontri. \\
+Documentazione & 15:30 - 16:00 & Non essendo chiari i dettagli algoritmici, non è possibile stendere la documentazione definitiva. Le specifiche di dettaglio verranno prodotte nei successivi incontri. \\
 \end{longtable}
 
 \subsubsection*{Conditions of Satisfaction (CoS)}
