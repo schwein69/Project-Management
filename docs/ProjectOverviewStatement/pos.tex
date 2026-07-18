@@ -1,0 +1,127 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[left=20mm, right=20mm, top=25mm, bottom=25mm]{geometry}
+\usepackage{tabularx}
+\usepackage{xltabular} 
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\definecolor{headerblue}{RGB}{41, 128, 185}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+    \Large \textbf{PROJECT OVERVIEW STATEMENT}
+\end{center}
+\vspace{0.5cm}
+
+\noindent
+\begin{tabularx}{\textwidth}{|c|X|c|c|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Doc Type}} & \textcolor{white}{\textbf{Project Name}} & \textcolor{white}{\textbf{Project No.}} & \textcolor{white}{\textbf{Project Manager}} \\
+    \hline
+    POS & Shipping-on-the-Air & Start-001 & Jiahao Guo, Kalile Horri, Intissar Medebbed \\
+    \hline
+\end{tabularx}
+
+\vspace{1cm}
+
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}X|}
+    \hline
+    \rowcolor{lightgray}
+    \textbf{Problem/Opportunity} \\
+    \hline
+    L'attuale modello logistico di NexusLog, basato esclusivamente sul trasporto su gomma, risulta ormai saturo. Il traffico urbano causa inefficienze sistematiche e ritardi imprevedibili, rendendo i costi operativi per l'ultimo miglio sproporzionati per la movimentazione di piccoli pacchi. L'opportunità consiste nell'ampliare l'offerta dei servizi, abbattendo drasticamente i costi operativi e permettendo all'azienda di aggredire il mercato delle spedizioni ultra-rapide e del \textit{food delivery} tramite soluzioni proprietarie all'avanguardia. \\
+    \hline
+    
+    \rowcolor{lightgray}
+    \textbf{Goal} \\
+    \hline
+    Implementare un'architettura software (in fase iniziale come Proof of Concept / MVP) in grado di orchestrare e gestire in totale sicurezza flotte di droni per le consegne, garantendo tempi di spedizione rapidissimi e tutelando al contempo la \textit{brand reputation} del committente. \\
+    \hline
+    
+    \rowcolor{lightgray}
+    \textbf{Objectives} \\
+    \hline
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+        \item Sviluppare il modulo \textbf{Gestione Ordini} per la ricezione e l'orchestrazione del ciclo di vita della consegna.
+        \item Sviluppare il modulo \textbf{Logistica e Flotta} per il controllo automatizzato dei vincoli pre-volo (autonomia batteria, limiti di \textit{payload}).
+        \item Implementare il sistema di \textbf{Navigazione} capace di calcolare le rotte ottimali e aggirare dinamicamente gli ostacoli.
+        \item Realizzare un sottosistema di \textbf{Tracciamento Live} per la lettura della telemetria satellitare in tempo reale.
+        \item Fornire un sistema \textit{event-driven} per \textbf{Notifiche \& Pagamenti}, interfacciato con i database preesistenti di NexusLog.
+    \end{itemize} \\
+    \hline
+
+    \rowcolor{lightgray}
+    \textbf{Success Criteria} \\
+    \hline
+    \begin{itemize}[leftmargin=*, topsep=0pt]
+        \item Abbattimento drastico dei tempi di consegna per l'ultimo miglio rispetto agli standard attuali su gomma, secondo la seguente tabella:
+        \vspace{0.5em}
+        
+        \begin{center}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|c|c|c|}
+            \hline
+            \rowcolor{headerblue!20}
+            \textbf{Tipologia di Servizio} & \textbf{Attuale} & \multicolumn{2}{c|}{\textbf{Desiderato}} \\
+            \cline{2-4}
+            \rowcolor{headerblue!10}
+            & \textbf{Tempo medio} & \textbf{Tempo medio}  & \textbf{Max} \\
+            \hline
+            Pacchi leggeri (B2C) & $>$ 24 ore & 120 minuti  & 240 minuti \\
+            \hline
+            Food Delivery & N/A (Nuovo) & 60 minuti  & 90 minuti \\
+            \hline
+        \end{tabularx}
+        \end{center}
+        
+        \vspace{0.5em}
+        \textit{Miglioramento percepibile e testabile già al rilascio del Minimum Viable Product nelle aree di prova.}
+        
+        \item Rilascio del Proof of Concept funzionante entro le 4 mesi concordate a partire dalla data di inizio e nel rigoroso rispetto del budget limitato stanziato dalla dirigenza.
+        
+        \item Zero incidenti software legati al mancato rispetto delle \textit{no-fly zone} o al calcolo errato del \textit{payload}, per garantire la totale protezione della reputazione logistica di NexusLog.
+    \end{itemize} \\
+    \hline
+
+    \rowcolor{lightgray}
+    \textbf{Assumptions / Risks / Obstacles} \\
+    \hline
+    \textit{Assunzioni}
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+        \item Il \textit{procurement} dell'hardware (droni, batterie, stazioni di ricarica) e la relativa gestione operativa in-house sono di competenza esclusiva del committente NexusLog.
+        \item NexusLog fornirà tempestivamente la documentazione tecnica e le API proprietarie necessarie per far comunicare il nostro software con la telemetria di bordo degli aeromobili scelti.
+    \end{itemize}
+    
+    \vspace{0.5em}
+    \textit{Rischi \& Ostacoli}
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+        \item \textbf{Rischio Regolamentare:} L'orchestrazione dei voli urbani è soggetta a severe regolamentazioni. Cambiamenti o restrizioni governative improvvise potrebbero limitare o ostacolare i test sul campo.
+        \item \textbf{Rischio Reputazionale:} Essendo NexusLog un marchio consolidato, qualsiasi fallimento o anomalia visibile del sistema droni potrebbe avere ripercussioni d'immagine sul loro \textit{core business} tradizionale.
+        \item \textbf{Ostacolo di Integrazione:} Possibili colli di bottiglia o difficoltà tecniche durante l'integrazione del nuovo sistema.
+    \end{itemize} \\
+    \hline
+
+    \rowcolor{lightgray}
+    \textbf{Glossary} \\
+    \hline
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=0pt]
+        \item \textbf{Proof of Concept:} Realizzazione embrionale del progetto per testare e dimostrare la fattibilità tecnica dell'integrazione tra software e droni.
+        \item \textbf{Minimum Viable Product:} La prima versione del servizio rilasciata in area pilota, dotata delle sole funzionalità essenziali per convalidare l'interesse del mercato verso le consegne in 60 minuti.
+        \item \textbf{Payload:} Il carico utile massimo (peso e dimensioni) che un drone può trasportare in sicurezza garantendo l'autonomia della batteria.
+        \item \textbf{No-fly zone:} Aree dello spazio aereo cittadino in cui il volo dei droni è severamente vietato e che il software di \textit{routing} deve dinamicamente evitare.
+        \item \textbf{Telemetria:} L'insieme dei dati (coordinate GPS, altitudine, velocità, stato batteria) trasmessi in tempo reale dal drone al nostro server centrale.
+    \end{itemize} \\
+    \hline
+\end{xltabular}
+
+\end{document}
