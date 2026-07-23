@@ -1,0 +1,122 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- LIBRERIE E IMPOSTAZIONI ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[left=20mm, right=20mm, top=25mm, bottom=25mm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Descrizione del Progetto - Shipping-on-the-Air},
+}
+
+\begin{document}
+
+\section{Descrizione del progetto}
+
+\subsection{Introduzione}
+NexusLog S.p.A. è un'importante azienda italiana di spedizioni, dotata di una vasta rete di veicoli e sedi logistici. Negli ultimi anni ha gestito enormi volumi di lavoro, ma l'attuale sistema basato esclusivamente sul trasporto su strada inizia a mostrare i suoi limiti. Per questo motivo, la dirigenza ha deciso di modernizzare le consegne urbane introducendo flotte di droni, attraverso un progetto denominato \textit{Shipping-on-the-Air}. L'obiettivo è duplice: superare il problema del traffico (che rende troppo costose le consegne dei piccoli pacchi) ed entrare in modo competitivo nel mercato delle consegne veloci e del \textit{food delivery}. 
+
+Inizialmente NexusLog aveva valutato l'acquisto di un software già esistente. Tuttavia, per tutelare l'immagine dell'azienda e per garantire una perfetta integrazione con i propri sistemi informatici, ha preferito farsi sviluppare una soluzione su misura. Hanno quindi incaricato la nostra startup (TechSolution) di creare questo nuovo programma per gestire i droni in modo più efficiente rispetto ai corrieri tradizionali.
+
+Mario Rossi, responsabile del progetto per NexusLog, ci ha richiesto di sviluppare un sistema capace di ricevere gli ordini, controllare i voli dei droni (rispettando rigorosamente limiti di peso e batteria) e un server centrale per seguire le operazioni in tempo reale. Il progetto partirà con una prima versione base e funzionante (PoC / MVP), suddivisa in tre macro-sottosistemi.
+
+\subsection{Sottosistema 1 - Applicazione per Clienti e Negozi}
+La prima parte consiste in un'applicazione (disponibile per dispositivi mobili e computer) necessaria per effettuare gli ordini e tracciare le spedizioni. L'erogazione del servizio si divide in due categorie principali:
+
+\begin{itemize}
+    \item \textit{Cibo a domicilio (Food Delivery)}
+    \begin{itemize}
+        \item Gestione Negozi: I locali partner (pizzerie, ristoranti, fast food) dispongono di un'interfaccia dedicata. Quando una persona effettua un ordine, il sistema calcola automaticamente il tempo stimato di consegna in base alla distanza tra il negozio e l'indirizzo del cliente, il cliente paga online e il drone parte immediatamente per la consegna. Quando il cibo è pronto, il negozio lo aggancia al drone e il sistema invia una notifica al cliente per informarlo che l'ordine è in arrivo. I partner commerciali possono anche visualizzare lo storico degli ordini ricevuti e le statistiche di consegna. Inoltre devono disporre delle apposite scatole di contenimento per il trasporto dei cibi, che garantiscono la sicurezza e la temperatura ottimale durante il volo. Essi sono forniti da NexusLog e devono essere obbligatoriamente utilizzati per ogni consegna.
+        \item Tempo di consegna previsto: 60-120 minuti.
+        \item Tracciamento: Il cliente visualizza il drone in tempo reale sulla mappa e riceve notifiche di aggiornamento (es. ``Ordine Ricevuto'', ``Attesa preparazione'' ,``Drone in Volo'', ``In Arrivo'',``Consegnato'',``Drone in rientro'').
+    \end{itemize}
+    
+    \item \textit{Pacchi Leggeri}
+    \begin{itemize}
+        \item Gestione Interna: Questo flusso è gestito dai magazzini di NexusLog. Quando arrivano piccoli pacchi, gli operatori li caricano sui droni e ne avviano la consegna verso l'indirizzo di destinazione.
+        \item Tempo di consegna previsto: 120-240 minuti.
+        \item Tracciamento: Il cliente visualizza un calcolo del tempo stimato di arrivo, basato sulla distanza dal polo logistico.
+    \end{itemize}
+\end{itemize}
+
+Al termine dell'inserimento dell'ordine, l'applicazione mostra un riepilogo del peso e delle dimensioni del pacco, affiancato da un sistema sicuro per il pagamento online. 
+
+Il sistema deve garantire affidabilità anche in caso di connessione internet instabile. Se la rete del cliente o del negozio dovesse interrompersi durante l'ordine, l'app salverà i dati e riproverà a inviarli in automatico non appena il segnale verrà ripristinato, evitando la perdita delle informazioni inserite.
+
+Inoltre, si richiede che l'applicazione possa:
+\begin{itemize}
+    \item mantenere lo storico di tutte le spedizioni effettuate;
+    \item permettere all'utente di gestire il proprio profilo, interfacciandosi con i database storici di NexusLog.
+\end{itemize}
+
+\subsection{Sottosistema 2 - Controllo della Flotta e delle Rotte}
+Il secondo sottosistema è il nucleo operativo del progetto, progettato per coordinare fisicamente i droni e stabilire i percorsi aerei ottimali in partenza dai magazzini.
+
+\subsubsection*{Come si svolge una consegna}
+Esistono delle regole di sicurezza fisse da rispettare prima di autorizzare un decollo:
+\begin{itemize}
+    \item \textbf{Limiti di Peso (Payload)}
+    \begin{itemize}
+        \item Ultra-leggero (fino a 500 grammi)
+        \item Leggero (da 500 grammi a 1 kg)
+        \item Medio (da 1 kg a 2 kg - il massimo consentito in questa prima fase)
+    \end{itemize}
+    
+    \item \textbf{Livello della Batteria}
+    \begin{itemize}
+        \item Maggiore dell'80\% (Obbligatorio per le tratte lunghe o in caso di forte vento)
+        \item Tra 50\% e 80\% (Idoneo per percorsi urbani brevi)
+        \item Minore del 50\% (Il drone non riceve l'autorizzazione e deve essere ricaricato)
+    \end{itemize}
+\end{itemize}
+
+Ogni viaggio si divide in tre fasi fondamentali:
+
+\begin{itemize}
+    \item \textbf{Controlli prima del volo:} Il sistema verifica che l'autonomia della batteria sia sufficiente per trasportare il peso richiesto fino a destinazione. Se l'energia non è adeguata, il sistema blocca il volo e assegna la consegna a un drone più carico.
+    \item \textbf{Volo e Navigazione:} Il drone segue la rotta evitando automaticamente le zone vietate al volo. In caso di nuovi divieti diramati dalle autorità durante il tragitto, il sistema calcola immediatamente un percorso alternativo.
+    \item \textbf{Atterraggio:} Appositi sensori garantiscono che non ci siano ostacoli o persone nel punto esatto di consegna prima di depositare il pacco.
+    \item \textbf{Consegna e Rientro:} Dopo essere atterrato, il drone invia una notifica di consegna al cliente, in caso di pacchi, e in caso di food delivery il drone attende che il cliente ritiri l'ordine prima di tornare al magazzino. In entrambi i casi, il drone rientra alla base per essere ricaricato e pronto per la prossima consegna.
+\end{itemize}
+
+L'esecuzione del volo è costantemente monitorata da un timer per assicurare il rispetto delle tempistiche di consegna. Qualora si verifichi un'emergenza (un guasto tecnico o condizioni meteo critiche), il sistema attiva una procedura di rientro automatico alla base più vicina. La consegna viene sospesa e segnalata come ritardata, garantendo sempre la massima sicurezza aerea.
+
+\subsubsection*{Monitor per gli Operatori di Magazzino}
+Agli operatori di magazzino, il software è collegato a monitor esterni per permettere agli addetti di controllare visivamente le operazioni:
+
+\begin{itemize}
+    \item \textbf{Monitor Generale di Flotta:} Mostra la lista di tutti i droni operativi in quel magazzino, indicando la loro destinazione, il carico trasportato e l'orario di arrivo stimato. L'elenco si aggiorna automaticamente alla conclusione di ogni consegna.
+    \item \textbf{Monitor di Dettaglio:} Selezionando un singolo drone, l'operatore può visualizzarne la posizione esatta sulla mappa, l'altitudine, la velocità e l'autonomia residua. Da questa schermata è possibile inviare comandi di rientro manuale.
+\end{itemize}
+
+Per facilitare la lettura, il sistema utilizza un codice colori intuitivo:
+\begin{itemize}
+    \item \textbf{VERDE} - Operazioni regolari;
+    \item \textbf{ARANCIONE} - Avviso (es. batteria in esaurimento o ricalcolo della rotta in corso);
+    \item \textbf{ROSSO} - Emergenza o procedura di rientro alla base.
+\end{itemize}
+Queste informazioni devono risultare chiare e ben visibili dagli operatori anche a 15 metri di distanza.
+
+\subsection{Sottosistema 3 - Server Centrale e Orchestrazione}
+Il terzo sottosistema è il server centrale (\textit{Cloud Server}), progettato per coordinare l'intera rete di droni e supervisionare il servizio a livello cittadino.
+
+Il server importa automaticamente le anagrafiche clienti dai sistemi di NexusLog. Tutti i dati di volo vengono salvati in modo sicuro e crittografato.
+
+Durante le operazioni, il server riceve costantemente i dati dai droni. Se un drone dovesse perdere temporaneamente la connessione alla rete internet, il suo computer interno lo guiderà per completare la manovra in sicurezza. Non appena la connessione verrà ristabilita, il drone sincronizzerà le informazioni mancanti con il server centrale.
+
+Il sistema elabora inoltre i tempi di consegna per verificare il rispetto delle tempistiche promesse (SLA) e generare statistiche sulle prestazioni dell'azienda.
+
+Infine, il software include un pannello di amministrazione. Da questa sezione, i responsabili possono aggiornare le mappe delle zone vietate al volo, modificare i limiti di peso o regolare le soglie di sicurezza della batteria. Ogni modifica apportata viene immediatamente trasmessa a tutta la flotta operativa.
+
+\subsubsection*{Nota sui Requisiti}
+Il cliente richiede espressamente che l'interfaccia grafica dei monitor e dei pannelli di controllo sia estremamente intuitiva. Deve poter essere utilizzata con facilità dal personale di magazzino, senza la necessità di possedere competenze informatiche o tecniche avanzate.
+Per il pagamento del food delivery, il cliente richiede che l'applicazione supporti i principali metodi di pagamento online, come carte di credito, PayPal e Apple Pay. Inoltre, il sistema deve garantire la sicurezza dei dati sensibili degli utenti, conformandosi alle normative vigenti sulla protezione dei dati personali (GDPR). Il servizio infatti richiede che il cliente paghi anticipatamente l'ordine, e che il pagamento sia confermato prima che il drone decolli. Infatti, in caso di mancato pagamento, il drone non riceverà l'autorizzazione al decollo e l'ordine verrà annullato, segnalando l'evento al cliente e al negozio.
+
+\end{document}
